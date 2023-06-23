@@ -1,0 +1,16 @@
+.card-form.login {
+    margin: auto;
+    padding: 0;
+    width: 40%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}   
+
+.card-form.login .title-card-form {
+    text-align: center;
+}
+
+.card-form.login form {
+    border: none;
+}

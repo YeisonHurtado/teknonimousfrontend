@@ -1,0 +1,121 @@
+.profile-container {
+    width: 100%;
+    height: 90%;
+    color: #ffffff;
+}
+
+.basic-profile {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.profile-photo {
+    margin: 10px 0px;
+    width: 170px;
+    height: 170px;
+    background-color: #c0fcc39c;
+    border-radius: 50%;
+}
+
+.info-profile {
+    margin-bottom: 5px;
+    width: 45%;
+    height: 3em;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    background-color: #41e86e;
+    border-bottom: 1px solid #ccc;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.tag-events {
+    width: 50%;
+    height: 100%;
+    padding: 15px;
+    background-color: #191919;
+    text-align: center;
+    cursor: pointer;
+}
+
+.selected {
+    height: 89.5%;
+}
+.tag-events:hover {
+    height: 89.5%;
+}
+
+#user-events {
+    width: 100%;
+}
+
+.table {
+    position: relative;
+    margin: 10px 0px;
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #000;
+    font-size: .9em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    user-select: none;
+}
+
+.thead-dark {
+    background-color: rgb(35, 35, 35);
+    color: #fff;
+}
+
+.table tbody tr:hover {
+    cursor: pointer;
+    background-color: rgba(0,0,0,.075) !important;
+    transition: .32s ease-in-out;
+}
+
+.table th, .table td {
+    padding: 9px;
+    border: 1px solid #ccc;
+}
+
+.table tbody tr .user-to-edit {
+    padding: 5px;
+    margin: auto;
+    width: 80%;
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+    color: #fff;
+    background-color: #25d9a0;
+    border: 1px solid #25d9a0;
+    border-radius: .2rem;
+}
+
+.table tbody tr button:hover {
+    background-color: #21c994;
+    border: 1px solid #21c994;
+    transition: .32s ease-in-out;
+}
+
+table .advice-events {
+    position: absolute;
+    width: 100%;
+    padding-top: 10px;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    background-color: #00000000;
+    color: #fff;
+}
+
+/* .table tbody tr:nth-of-type(odd){
+    background-color: #bcbcbc;
+}
+
+.table tbody tr:nth-of-type(odd) td {
+    border: 1px solid #fff;
+} */
