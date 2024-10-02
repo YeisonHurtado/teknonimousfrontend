@@ -3,9 +3,14 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Main from './components/Main/Main';
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter, Navigate } from 'react-router-dom'
 import { StaticLayout } from './components/Layouts/StaticLayout';
+import { Routes, Route } from 'react-router-dom'
 import User from './context/UserContext';
+import { Account } from './components/Confirmation/Account';
+import setupAxiosInterceptors from './services/Interceptor';
+
+setupAxiosInterceptors()
 
 
 const root = ReactDOM.createRoot(
@@ -14,12 +19,22 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
+    {/* Se quito React.StrictMode para reenderizar solo una vez las funciones  */}
     <BrowserRouter>
-      <User>
-        <StaticLayout>
-          <Main />
-        </StaticLayout>
-      </User>
+      <Routes>
+        <Route
+          path='/*'
+          element={
+            <User>
+              <StaticLayout>
+                <Main />
+              </StaticLayout>z
+            </User>
+
+          }
+        />
+        <Route path='/accountconfirm/:token' element={<Account />} />
+      </Routes>
     </BrowserRouter>
   </React.StrictMode>
 );

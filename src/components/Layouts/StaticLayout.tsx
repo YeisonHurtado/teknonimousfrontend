@@ -2,14 +2,18 @@ import React from 'react'
 import Header from './Header'
 import Footer from './Footer'
 interface Props {
-    children: any
+  children: any
 }
-export const StaticLayout = ({children}: Props) => {
+export const StaticLayout = ({ children }: Props) => {
   return (
     <>
-    <Header/>
-    {children}
-    <Footer/>
+      <Header />
+      <main>
+        <section className="content">
+          {children}
+        </section>
+      </main>
+      <Footer />
     </>
   )
 }

@@ -1,16 +1,181 @@
 .card-form.login {
     margin: auto;
-    padding: 0;
-    width: 40%;
+    padding: 0px;
+    width: 35%;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-}   
+    justify-content: center;
+}
 
 .card-form.login .title-card-form {
     text-align: center;
 }
 
 .card-form.login form {
+    flex-direction: column;
+}
+
+.card-form.login form .form-01-control {
+    width: 100%;
+}
+
+/* 
+    Protected view
+*/
+.protected_view {
+    position: absolute;
+    padding: 20%;
+    width: 100%;
+    height: 100%;
+    background-color: #000000cf;
+    text-align: center;
+}
+
+.protected_view::after {
+    width: 100%;
+    content: 'No tienes acceso a este modulo.';
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2em;
+    align-self: center;
+    color: #fff;
+}
+
+
+/* --------------------------- */
+/* SIGNUP */
+/* ----------------------------- */
+.containter-signup {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.header-signup {
+    padding: 1.5em;
+    padding-bottom: .3em;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #50a809f1;
+    background-color: #292929f2;
+}
+
+.header-signup #title {
+    font-size: 35px;
+    font-weight: bolder;
+}
+
+.header-signup #info-user {
+    margin-top: .3em;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+#info-user div {
+    margin-right: .6em;
+    color: #bdbdbdcc;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.form-signup {
+    width: 65%;
+    padding: 2em;
+}
+
+form#signup {
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-group {
+    padding: .5em;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.validation-input {
+    margin-right: .02em;
+    width: 45%;
+}
+
+.form-group.date-group {
+    flex-flow: row wrap;
+}
+
+.form-group input.form-control {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 1.01em;
+    border: 1px solid #cacaca;
+    border-radius: 5px;
+    outline: none;
+    color: #fff;
+    background-color: inherit;
+}
+
+.date-group input.form-control {
+    width: 100%;
+}
+
+input.form-control:focus {
+    border: 1px solid #1783c6;
+    box-shadow: 0px 0px 6px #216da3;
+    outline: 0;
+    transition: .2s ease-in-out;
+}
+
+.form-group#input_rol {
+    justify-content: flex-start;
+}
+
+.form-group#input_rol label {
+    margin: 1em;
+    display: inline-block;
+    width: auto;
+}
+
+label input[type="checkbox"] {
+    margin: .5em;
+}
+
+.btn {
+    width: 100%;
+    padding: 1em;
+    font-size: 1em;
+    background-color: rgba(255, 255, 255, 0.922);
     border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: rgba(255, 255, 255, 0.874);
+    transition: background-color .3s ease-in-out;
+}
+
+.btn-success {
+    background-color: rgba(2, 197, 109, 0.922);
+    color: #fff;
+}
+
+.btn-success:hover {
+    background-color: rgba(37, 208, 74, 0.874);
+}
+
+.validationError {
+
+    padding: 5px;
 }

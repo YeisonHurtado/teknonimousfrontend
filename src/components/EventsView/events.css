@@ -1,0 +1,225 @@
+.main-container {
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.title-container {
+    width: 100%;
+    height: 5em;
+    padding-left: 2em;
+    margin-bottom: 2rem;
+    text-align: left;
+    font-size: 45px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #fff;
+    box-sizing: content-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title-container span {
+    font-size: 15px;
+    color: #b5b4b4;
+}
+
+.container-events {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+.event-item {
+    width: 300px;
+    height: 550px;
+    margin: 0 .5em 2em;
+    display: flex;
+    flex-flow: column nowrap;
+    color: #fff;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.item-poster {
+    width: 100%;
+    height: 85%;
+    margin-bottom: .8rem;
+}
+
+.item-poster img {
+    width: 100%;
+    height: 100%;
+}
+
+.item-date {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.item-name {
+    position: relative;
+    padding: .3em 0;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+
+.item-name a {
+    text-decoration: none;
+    color: #ffffffa7;
+    font-weight: 900;
+}
+
+.item-name a:hover {
+    color: rgba(240, 0, 0, 0.938);
+    transition: .34s ease-in-out;
+}
+
+/*  Event info (Details) */
+.event-main-container {
+    margin-bottom: 2em;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.event-header {
+    width: 100%;
+    height: 350px;
+    position: relative;
+}
+
+.event-poster {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.blur-image {
+    position: absolute;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    background-color: #c9c9c94b;
+    filter: blur(-1.5rem);
+}
+
+.event-poster img {
+    width: 100%;
+    height: 90%;
+    filter: blur(1.5em);
+}
+
+.event-title {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 100px;
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    background-color: #96969605;
+    color: #ffffff;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 35px;
+    font-weight: bolder;
+    z-index: 999;
+}
+
+.event-title strong {
+    position: relative;
+}
+
+.edit-event {
+    top: -10%;
+    left: 100%;
+    filter: invert();
+}
+
+.event-location {
+    padding: .5em 2em;
+    font-size: 40px;
+    color: #fff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.event-location strong {
+    position: relative;
+    display: inline-block;
+}
+
+.event-location strong:after {
+    position: absolute;
+    background-image: url('../../../public/images/landmark.png');
+    background-size: 50px 50px;
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    content: "";
+    font-size: 15px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #b5b4b4;
+    top: 0%;
+    left: -50px;
+}
+
+.event-content {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+}
+
+.event-lineup {
+    width: 40%;
+    padding: 0 6em 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.event-lineup strong {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 35px;
+    color: #878787;
+}
+
+.event-lineup ul {
+    list-style: none;
+    padding: .2em 1em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #fff;
+}
+
+.event-lineup ul li {
+    position: relative;
+    padding: 4px;
+}
+
+.event-lineup ul li:before {
+    content: "💿";
+}
+
+.event-images {
+    margin: 0 2em .6em 2em;
+    width: 390px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.event-img,
+.event-img img {
+    width: 100%;
+    height: 100%;
+}

@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import * as userService from '../../services/UserService'
-import { userLoginInterface } from '../../interfaces/UserInterface'
+import { userLoginInterface, NotAllowedLogin } from '../../interfaces/UserInterface'
 import { UserContext, context } from '../../context/UserContext'
 import './index.css'
 
@@ -10,28 +10,32 @@ export const Login = () => {
         password: ""
     }
 
-    const {userAuth, setUserAuth} = useContext(UserContext) as context
+
+
+    const { userAuth, setUserAuth, setUserExpired } = useContext(UserContext) as context
+
+    const [notAllowed, setNotAllowed] = useState<NotAllowedLogin | any>()
 
     const [userLogin, setUserLogin] = useState<userLoginInterface>(initialState)
 
     const handleSubmitLogin = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         const res = await userService.login(userLogin)
-        .catch(function (err) {
-            if (err.response) {
-                console.error(err.response.data)
-            }
-        })
+            .catch(function (err) {
+                if (err.response) {
+                    setNotAllowed(err.response.data)
+                }
+            })
         if (res?.data.token) {
-            
             localStorage.setItem("token", JSON.stringify(res.data.token))
-            setUserAuth(localStorage.getItem("token") || "")
+            setUserExpired(false)
+            setUserAuth(localStorage.getItem("token"))
         }
     }
 
     const handleInputChange = (name: string, value: string) => {
-        setUserLogin({...userLogin, [name]: value})
-    }    
+        setUserLogin({ ...userLogin, [name]: value })
+    }
 
     return (
         <div className="card-form login">
@@ -44,7 +48,7 @@ export const Login = () => {
                         type="text"
                         className="form-01-input"
                         placeholder="Email or user name"
-                        onChange={(e)=>handleInputChange(e.target.name, e.target.value)}
+                        onChange={(e) => handleInputChange(e.target.name, e.target.value)}
                         name='userOrEmail'
                         value={userLogin.userOrEmail}
                     />
@@ -54,10 +58,13 @@ export const Login = () => {
                         type="password"
                         className="form-01-input"
                         placeholder="Password"
-                        onChange={(e)=>handleInputChange(e.target.name, e.target.value)}
+                        onChange={(e) => handleInputChange(e.target.name, e.target.value)}
                         name='password'
                         value={userLogin.password}
                     />
+                </div>
+                <div className="validation_Error">
+                    {notAllowed?.name && <span className='validationError'>{notAllowed.message}</span>}
                 </div>
                 <div className="form-01-control">
                     <button type="submit" className="form-button-primary">

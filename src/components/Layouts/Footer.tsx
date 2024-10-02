@@ -3,9 +3,7 @@ import React from 'react'
 const Footer = () => {
   return (
     <footer>
-        <div className="warning">
-            <span>What are you looking for? </span>
-        </div>
+      <p>&copy; 2024 Jeison Hurtado. All rights reserved.</p>
     </footer>
   )
 }

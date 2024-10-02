@@ -8,8 +8,8 @@ export const PublicRoute = () => {
     if (userAuth) {
         return <Navigate to='/profile' />
     }
-    
+
     return (
         <Outlet />
-  )
+    )
 }

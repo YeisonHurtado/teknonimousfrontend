@@ -52,7 +52,7 @@ const EventForm = ({ loadEvents, eventFound }: Props) => {
         name: '',
         location: '',
         poster: '',
-        date: new Date(),
+        date: '',
         lineup: dataDefault
     }
 
@@ -195,7 +195,15 @@ const EventForm = ({ loadEvents, eventFound }: Props) => {
 
 
     return (
-        <>
+        <div className='container'>
+            <div className="title-card-form">
+                {
+                    params.id ?
+                        <span>Modify an event</span>
+                        :
+                        <span>Upload an event</span>
+                }
+            </div>
 
             {
                 imageUrl && (
@@ -205,14 +213,6 @@ const EventForm = ({ loadEvents, eventFound }: Props) => {
                 )
             }
             <div className="card-form">
-                <div className="title-card-form">
-                    {
-                        params.id ?
-                            <span>Modify an event</span>
-                            :
-                            <span>Upload an event</span>
-                    }
-                </div>
                 {
                     params.id ?
                         <div className={`success ${success ? 'active' : ''}`}>
@@ -254,10 +254,11 @@ const EventForm = ({ loadEvents, eventFound }: Props) => {
                             onChange={e => handleInputChange(e.target.name, e.target.value)}
                             type="datetime-local"
                             name='date'
-                            className={`form-01-input ${error?.location && 'error'}`}
+                            className={`form-01-input ${error?.date && 'error'}`}
                             id='event_date'
                             value={event.date.toLocaleString()}
                         />
+                        {error?.date && <span className='validationError'>{error.date}</span>}
                     </div>
                     {<ArtistsForm rows={formDJS} handleInputChange={handleInputChange} addRow={addRow} errorValidation={`${error?.name_dj ? error.name_dj : ''}`} onRemove={onRemove} />}
 
@@ -291,7 +292,7 @@ const EventForm = ({ loadEvents, eventFound }: Props) => {
                     </div>
                 </form>
             </div>
-        </>
+        </div>
     )
 }
 

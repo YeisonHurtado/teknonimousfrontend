@@ -36,9 +36,8 @@ export const Navbar = () => {
         </svg>
       </div>
       <ul className="links">
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/contactus">Contact us</Link></li>
-        <li><Link to="/aboutus">About us</Link></li>
+        <li><Link to="/events">Events</Link></li>
+        <li><Link to="/aboutme">About me</Link></li>
       </ul>
       <Search events={eventsFound} showEvents={showEvents} setShowEvents={setShowEvents} />
     </nav>

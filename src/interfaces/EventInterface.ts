@@ -1,4 +1,4 @@
-export interface EventInterface{
+export interface EventInterface {
     _id?: string
     name: string,
     lineup: DataDJ[],

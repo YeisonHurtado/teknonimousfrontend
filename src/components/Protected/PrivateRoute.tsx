@@ -2,12 +2,14 @@ import React, { useContext } from 'react'
 import { Navigate, Outlet } from 'react-router-dom'
 import { UserContext, context } from '../../context/UserContext'
 
-export const PrivateRoute = () : React.JSX.Element=> {
-    const {userAuth} = useContext(UserContext) as context
-    if (!localStorage.getItem("token")) return <Navigate to="/" />
+export const PrivateRoute = (): React.JSX.Element => {
+    const { userAuth, userExpired } = useContext(UserContext) as context
+    if (userExpired || !userAuth) {
+        return <Navigate to="/login" />
+    }
 
     return (
-        <Outlet/>
+        <Outlet />
     )
 }
 

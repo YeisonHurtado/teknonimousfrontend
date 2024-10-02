@@ -1,19 +1,14 @@
 import React from 'react'
-import { Aside } from '../Aside/Aside'
+import './about.css'
 import { EventInterface } from '../../interfaces/EventInterface'
 
-interface Props {
-  events: EventInterface[]
-}
 
-const About = ({events}: Props) => {
+const About = () => {
   return (
-    <>
-      <div>
-          Aquí encontraras la información necesaria de como empieza este proyecto.
-      </div>
-      <Aside events={events}/>
-    </>
+    <div className="about-me-container">
+      <h1>Hello world!</h1>
+      <p>I'm Jeison Hurtado and I created this page with a lot of effort and dedication. I hope you like it.</p>
+    </div>
   )
 }
 

@@ -1,19 +1,21 @@
 import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Navbar } from '../Navbar/Navbar'
 import EventAdd from '../Event/EventForm'
 import { UserContext, context } from '../../context/UserContext'
 import jwtDecode from 'jwt-decode'
 
 const Header = () => {
-  const { userAuth } = useContext(UserContext) as context
-  const { setUserAuth } = useContext(UserContext) as context
-  
+  const { userAuth, setUserAuth, setUserExpired } = useContext(UserContext) as context
+  const navigate = useNavigate()
+
   // Decodificar un jwt ---> const decode : any = jwtDecode(JSON.parse(localStorage.getItem("token")?.toString() || ""))
 
   const logout = () => {
     localStorage.removeItem("token")
     setUserAuth(null)
+    setUserExpired(false)
+    navigate("/login")
   }
 
   return (
