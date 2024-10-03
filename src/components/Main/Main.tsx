@@ -13,7 +13,6 @@ import { PrivateRoute } from '../Protected/PrivateRoute'
 import { PublicRoute } from '../Protected/PublicRoute'
 import { Profile } from '../Profile/Profile'
 import Details from '../EventsView/Details'
-import { Account } from '../Confirmation/Account'
 
 const Main = () => {
   // Guardara los eventos que hayan en la base de datos. Se eleva este useState al CONTENEDOR PRINCIPAL (MAIN)

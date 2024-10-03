@@ -7,6 +7,7 @@ import { Search } from '../Search/Search';
 export const Navbar = () => {
   const [eventsFound, setEventsFound] = useState<EventInterface[]>([])
   const [showEvents, setShowEvents] = useState(false)
+  const token = localStorage.getItem("token")
 
   const loadSearchEvents = async (search: string) => {
     const res = await eventService.getEventsLike(search)
@@ -36,6 +37,11 @@ export const Navbar = () => {
         </svg>
       </div>
       <ul className="links">
+        {
+          !token
+          &&
+          <li><Link to="/signup">Signup</Link></li>
+        }
         <li><Link to="/events">Events</Link></li>
         <li><Link to="/aboutme">About me</Link></li>
       </ul>
